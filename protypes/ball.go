@@ -1,3 +1,18 @@
+components {
+  id: "ball"
+  component: "/scripts/ball.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "ballSprite"
   type: "sprite"
@@ -22,15 +37,14 @@ embedded_components {
   id: "ballCollision"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
-  "type: COLLISION_OBJECT_TYPE_DYNAMIC\n"
-  "mass: 1.0\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
+  "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
   "group: \"ball\"\n"
-  "mask: \"leftWall\"\n"
-  "mask: \"rightWall\"\n"
-  "mask: \"upWall\"\n"
-  "mask: \"downWall\"\n"
+  "mask: \"wall\"\n"
+  "mask: \"platform\"\n"
+  "mask: \"block\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
